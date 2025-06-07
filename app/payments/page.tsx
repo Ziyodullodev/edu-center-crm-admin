@@ -2,19 +2,7 @@
 
 import type React from "react"
 import { useState } from "react"
-import {
-  Download,
-  Filter,
-  MoreHorizontal,
-  Plus,
-  Search,
-  Trash,
-  CreditCard,
-  DollarSign,
-  AlertCircle,
-  CheckCircle,
-  Clock,
-} from "lucide-react"
+import { Download, Filter, MoreHorizontal, Plus, Search, Star, Users, BookOpen, Award, Clock, MapPin, CreditCard, DollarSign, AlertCircle, CheckCircle, Trash } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
@@ -40,15 +28,15 @@ import {
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Checkbox } from "@/components/ui/checkbox"
-import FullScreenAdminLayout from "../components/fullscreen-admin-layout"
+import FullScreenAdminLayout from "@/components/fullscreen-admin-layout"
 
 const payments = [
   {
     id: "PAY-2024-001",
     student: "Alice Johnson",
-    studentAvatar: "/placeholder.svg?height=32&width=32",
+    studentAvatar: "/placeholder.svg?height=40&width=40",
     amount: 450.0,
-    date: "Dec 1, 2024",
+    date: "2024-12-01",
     method: "Credit Card",
     status: "Paid",
     description: "Tuition fee for Mathematics Group A",

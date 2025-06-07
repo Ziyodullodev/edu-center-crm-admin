@@ -2,19 +2,7 @@
 
 import type React from "react"
 import { useState } from "react"
-import {
-  Calendar,
-  Download,
-  Filter,
-  MoreHorizontal,
-  Plus,
-  Search,
-  Users,
-  Clock,
-  MapPin,
-  GraduationCap,
-  BookOpen,
-} from "lucide-react"
+import { Download, Filter, MoreHorizontal, Plus, Search, Star, Users, BookOpen, Award, Clock, MapPin, Calendar, GraduationCap } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
@@ -41,7 +29,7 @@ import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Progress } from "@/components/ui/progress"
-import FullScreenAdminLayout from "../components/fullscreen-admin-layout"
+import FullScreenAdminLayout from "@/components/fullscreen-admin-layout"
 
 const groups = [
   {
@@ -49,12 +37,12 @@ const groups = [
     name: "Advanced Mathematics",
     subject: "Mathematics",
     teacher: "Dr. Michael Johnson",
-    teacherAvatar: "/placeholder.svg?height=32&width=32",
+    teacherAvatar: "/placeholder.svg?height=40&width=40",
     students: 25,
     maxStudents: 30,
-    schedule: "Mon, Wed, Fri 10:00 AM",
+    schedule: "Monday, Wednesday, Friday 10:00 - 12:00",
     status: "Active",
-    startDate: "Jan 15, 2024",
+    startDate: "2024-01-15",
     endDate: "Jun 15, 2024",
     room: "Room 101",
     level: "Advanced",

@@ -49,6 +49,8 @@ import {
   Clock,
   AlertTriangle,
   MoreHorizontal,
+  Edit2,
+  ChevronRight,
 } from "lucide-react"
 import { useLanguage } from "@/components/language-provider"
 import { useTheme } from "next-themes"
@@ -59,6 +61,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+import Link from "next/link"
 
 export default function SettingsPage() {
   const { t, language, setLanguage } = useLanguage()
@@ -69,6 +72,11 @@ export default function SettingsPage() {
   const [twoFactorAuth, setTwoFactorAuth] = useState(false)
   const [maintenanceMode, setMaintenanceMode] = useState(false)
   const [autoLogout, setAutoLogout] = useState(30)
+  const [profile, setProfile] = useState({
+    name: "Administrator",
+    email: "admin@educenter.com",
+    avatar: "/placeholder.svg?height=48&width=48",
+  })
 
   const systemStats = [
     { label: "Total Users", value: "1,234", icon: Users },
@@ -110,6 +118,12 @@ export default function SettingsPage() {
 
         <Tabs defaultValue="general" className="space-y-6">
           <TabsList className="grid w-full grid-cols-6">
+            <TabsTrigger value="profile">
+              <div className="flex items-center gap-2">
+                <User className="h-4 w-4" />
+                <span>Profil</span>
+              </div>
+            </TabsTrigger>
             <TabsTrigger value="general">General</TabsTrigger>
             <TabsTrigger value="notifications">Notifications</TabsTrigger>
             <TabsTrigger value="security">Security</TabsTrigger>
@@ -117,6 +131,29 @@ export default function SettingsPage() {
             <TabsTrigger value="backup">Backup</TabsTrigger>
             <TabsTrigger value="users">Users</TabsTrigger>
           </TabsList>
+
+          {/* Profile Section */}
+          <TabsContent value="profile" className="space-y-6">
+            <div className="flex flex-col gap-4">
+              <div className="flex items-center gap-4">
+                <Avatar className="h-12 w-12">
+                  <AvatarImage src={profile.avatar} />
+                  <AvatarFallback>{profile.name[0]}</AvatarFallback>
+                </Avatar>
+                <div>
+                  <h2 className="text-xl font-semibold">{profile.name}</h2>
+                  <p className="text-muted-foreground">{profile.email}</p>
+                </div>
+              </div>
+              <div className="flex justify-end">
+                <Link href="/settings/profile/edit" className="flex items-center gap-2">
+                  <Edit2 className="h-4 w-4" />
+                  <span>Profilni tahrirlash</span>
+                  <ChevronRight className="h-4 w-4" />
+                </Link>
+              </div>
+            </div>
+          </TabsContent>
 
           {/* General Settings */}
           <TabsContent value="general" className="space-y-6">

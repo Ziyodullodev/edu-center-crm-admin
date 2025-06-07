@@ -2,22 +2,7 @@
 
 import type React from "react"
 import { useState } from "react"
-import {
-  Download,
-  Filter,
-  MoreHorizontal,
-  Plus,
-  Search,
-  Trash,
-  Upload,
-  FileText,
-  Video,
-  ImageIcon,
-  File,
-  BookOpen,
-  Eye,
-  Heart,
-} from "lucide-react"
+import { Download, Filter, MoreHorizontal, Plus, Search, Star, Users, BookOpen, Award, Clock, MapPin, Trash, Upload, FileText, Video, ImageIcon, File, Eye, Heart } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
@@ -44,7 +29,7 @@ import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Textarea } from "@/components/ui/textarea"
-import FullScreenAdminLayout from "../components/fullscreen-admin-layout"
+import FullScreenAdminLayout from "@/components/fullscreen-admin-layout"
 
 const materials = [
   {
